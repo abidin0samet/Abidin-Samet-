@@ -78,7 +78,9 @@
                 <li><a href="#certifications" class="nav-link">Sertifikalar</a></li>
                 <li><a href="#education" class="nav-link">Eğitimler</a></li>
                 <li><a href="#academic" class="nav-link">Eğitim Geçmişi</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
                 <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#sebs-promo" class="nav-link">SEBS Global</a></li>
                 <li><a href="#contact" class="nav-link">İletişim</a></li>
             </ul>
             <div class="hamburger">
@@ -100,8 +102,14 @@
                     <h2 class="hero-subtitle-main">
                         Siber Güvenlik & Bulut Güvenliği Uzmanı
                     </h2>
+                    <div class="hero-badge-container">
+                        <span class="hero-badge-item">
+                            <i class="fas fa-crown"></i>
+                            SEBS Global Kurucu Ortağı
+                        </span>
+                    </div>
                     <p class="hero-description">
-                        <strong>Yönetim Bilişim Sistemleri</strong> öğrencisi olarak, dijital dünyanın karmaşık güvenlik zorluklarına çözümler üretmeye odaklanıyorum. 
+                        <strong>Yönetim Bilişim Sistemleri</strong> öğrencisi ve <strong>SEBS Global</strong> kurucu ortağı olarak, dijital dünyanın karmaşık güvenlik zorluklarına çözümler üretmeye odaklanıyorum. 
                         <br><br>
                         <strong>Uzmanlık Alanlarım:</strong><br>
                         • Bulut altyapılarında güvenlik stratejileri geliştirme<br>
@@ -157,6 +165,9 @@
                     </p>
                     <p>
                         Ayrıca, sızma testi (pentest), zararlı yazılım analizi, tersine mühendislik ve güvenlik analizi gibi alanlarda da hem teorik hem de uygulamalı eğitimlerle kendimi geliştirdim. CÜSİBER'de Yönetim Kurulu Başkanı olarak görev alıyor ve teknoloji ile siber güvenlik topluluklarını bir araya getiren projeler yürütüyorum.
+                    </p>
+                    <p>
+                        <strong>SEBS Global</strong> şirketini <strong>İbrahim Ethem Arı</strong> ve <strong>Emir Berat Kayalı</strong> ile birlikte kurarak, yapay zeka destekli alan belirleme platformu geliştiriyoruz. Platformumuz, kullanıcıların yeteneklerini analiz ederek en uygun alanı belirlemelerine, gerçekçi simülasyonlar ve kapsamlı eğitimler ile kendilerini geliştirmelerine yardımcı oluyor.
                     </p>
                     <p>
                         Sürekli öğrenmeye, yenilikçi çözümler geliştirmeye ve dijital güvenliği daha güvenli hale getirmeye odaklanıyorum. Amacım, bulut ve siber güvenlik alanında hem savunma hem saldırı perspektifinden güçlü bir uzmanlık geliştirmek ve bu bilgiyi toplulukla paylaşarak fark yaratmak.
@@ -621,6 +632,46 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">GitHub Projelerim</h2>
+                <p class="section-subtitle">Açık kaynak projelerim ve katkılarım</p>
+            </div>
+            <div id="projectsLoading" class="projects-loading">
+                <i class="fas fa-spinner fa-spin loading-spinner"></i>
+                <p>Projeler yükleniyor...</p>
+            </div>
+            <div id="projectsError" class="projects-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Projeler yüklenemedi. Lütfen daha sonra tekrar deneyin.</p>
+            </div>
+            <div id="projectsGrid" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">GitHub Projelerim</h2>
+                <p class="section-subtitle">Açık kaynak projelerim ve katkılarım</p>
+            </div>
+            <div id="projectsLoading" class="projects-loading">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Projeler yükleniyor...</p>
+            </div>
+            <div id="projectsError" class="projects-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Projeler yüklenemedi. Lütfen daha sonra tekrar deneyin veya <a href="https://github.com/abidin0samet" target="_blank" rel="noopener noreferrer">GitHub profilimi ziyaret edin</a>.</p>
+            </div>
+            <div id="projectsGrid" class="projects-grid"></div>
+        </div>
+    </section>
+
     <!-- Blog Section -->
     <section id="blog" class="blog">
         <div class="container">
@@ -628,163 +679,112 @@
                 <h2 class="section-title">Blog Yazılarım</h2>
                 <p class="section-subtitle">Siber güvenlik ve bulut güvenliği hakkında yazılarım</p>
             </div>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fab fa-aws"></i>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be loaded dynamically from Medium RSS -->
+                <div class="blog-loading" id="blogLoading">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
                     </div>
-                    <div class="blog-content">
-                        <h3>AWS Küresel Alt Yapısı</h3>
-                        <p>AWS'nin küresel altyapısı ve bölge yapısı hakkında detaylı analiz. AWS'nin dünya çapındaki veri merkezleri, availability zone'ları ve edge location'ları...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Eylül 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/aws-küresel-alt-yapısı-da02ef8890b8" class="blog-read-more">Medium'da Oku</a>
+                    <p>Medium yazıları yükleniyor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEBS Global Promotion Section -->
+    <section id="sebs-promo" class="sebs-promo">
+        <div class="container">
+            <div class="sebs-promo-content">
+                <div class="sebs-promo-text">
+                    <div class="sebs-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>SEBS Global</span>
+                    </div>
+                    <h2 class="sebs-title">Yapay Zeka Destekli Alan Belirleme ve Eğitim Platformu</h2>
+                    <div class="sebs-founders">
+                        <p class="sebs-founders-text">
+                            <i class="fas fa-users"></i>
+                            <strong>Kurucular:</strong> Abidin Samet Çay, İbrahim Ethem Arı, Emir Berat Kayalı
+                        </p>
+                    </div>
+                    <p class="sebs-description">
+                        <strong>SEBS Global</strong>, yapay zeka teknolojisi ile desteklenen kapsamlı bir alan belirleme, eğitim ve simülasyon platformudur. Platformumuz, kullanıcıların yeteneklerini analiz ederek en uygun alanı belirlemelerine, gerçek hayat senaryolarına dayalı simülasyonlar ile pratik yapmalarına, kapsamlı eğitimler almalarına ve detaylı raporlama sistemi ile ilerlemelerini takip etmelerine olanak sağlar.
+                    </p>
+                    <div class="sebs-features">
+                        <div class="sebs-feature-item interactive-card" data-feature="ai">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Yapay Zeka ile Alan Belirleme</h4>
+                                <p>AI teknolojisi ile yeteneklerinizi analiz edin ve size en uygun alanı keşfedin</p>
+                            </div>
+                        </div>
+                        <div class="sebs-feature-item interactive-card" data-feature="simulation">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Gerçekçi Simülasyonlar</h4>
+                                <p>Gerçek hayat senaryolarına dayalı, tutarlı simülasyonlar ile pratik deneyim kazanın</p>
+                            </div>
+                        </div>
+                        <div class="sebs-feature-item interactive-card" data-feature="education">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Kapsamlı Eğitimler</h4>
+                                <p>Farklı seviyelerde eğitim içerikleri ve interaktif öğrenme materyalleri ile kendinizi geliştirin</p>
+                            </div>
+                        </div>
+                        <div class="sebs-feature-item interactive-card" data-feature="reporting">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Detaylı Raporlama</h4>
+                                <p>Performansınızı analiz eden, gelişim alanlarınızı gösteren kapsamlı raporlama sistemi</p>
+                            </div>
+                        </div>
+                        <div class="sebs-feature-item interactive-card" data-feature="scoring">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Puanlama Sistemi</h4>
+                                <p>Simülasyonlar ve eğitimlerde aldığınız puanlarla ilerlemenizi takip edin ve başarılarınızı görün</p>
+                            </div>
+                        </div>
+                        <div class="sebs-feature-item interactive-card" data-feature="realistic">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Gerçek Hayat Uyumluluğu</h4>
+                                <p>Simülasyonlar gerçek dünya senaryolarına dayalı, endüstri standartlarına uygun içerikler</p>
+                            </div>
                         </div>
                     </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fab fa-aws"></i>
+                    <div class="sebs-buttons">
+                        <a href="https://sebsglobal.com" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i>
+                            SEBS Global'i Keşfet
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            İletişime Geç
+                        </a>
                     </div>
-                    <div class="blog-content">
-                        <h3>IAM (Identity Access Management) Servisi Kullanımı</h3>
-                        <p>AWS Identity Access Management (IAM) tüm AWS genelinde ayrıntılı erişim denetimi sağlar. IAM ile kimlerin hangi hizmet ve kaynaklara hangi koşullarda erişebileceğini güvenli bir şekilde yönetebilirsiniz...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Eylül 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/iam-indentity-access-management-servisi-kullanımı-b686123ffa2a" class="blog-read-more">Medium'da Oku</a>
+                </div>
+                <div class="sebs-promo-visual">
+                    <div class="sebs-logo-container">
+                        <div class="sebs-logo">
+                            <img src="SEBS.png" alt="SEBS Global Logo" class="sebs-logo-img">
                         </div>
+                        <div class="sebs-glow"></div>
                     </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>CNAPP (Cloud-Native Application Protection Platform) Ve Birleşenleri</h3>
-                        <p>Bulut bilişim, BT kaynaklarının internet üzerinden, istek üzerine ve kullandıkça ödeme fiyatlandırmasıyla sunulmasıdır. CNAPP ve bileşenleri hakkında detaylı analiz...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Ağustos 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/cnapp-cloud-native-application-protection-platform-ve-birleşenleri-5c0a1bd0f66e" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>OSI & TCP/IP Modelleri</h3>
-                        <p>Ağ protokolleri ve katmanlı mimari yapılar hakkında teknik yazı. OSI ve TCP/IP modellerinin karşılaştırmalı analizi...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Eylül 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/osi-tcp-ip-modelleri-71ff91423871" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>IAM (Identity and Access Management) NEDİR?</h3>
-                        <p>Identity and Access Management (IAM) modern bilgi güvenliği dünyasının en kritik yapı taşlarından biridir. Temel amacı kimin hangi kaynaklara ne zaman erişebileceğini kontrol etmektir...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Ağustos 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/iam-identity-and-acsess-management-nedir-9337929b762a" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>1. Bulut Bilişim</h3>
-                        <p>Bulut bilişim teknolojilerine giriş ve temel kavramlar. Bulut bilişimin avantajları, dezavantajları ve kullanım alanları hakkında detaylı bilgi...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Nisan 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/1-giriş-5a9f44d70fd4" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Küresel Bulut Bilişim Devleri: AWS, Microsoft Azure ve Google Cloud</h3>
-                        <p>Bulut bilişim dünyasının üç büyük oyuncusu olan AWS, Microsoft Azure ve Google Cloud Platform'un karşılaştırmalı analizi ve özellikleri...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Nisan 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/%EF%B8%8F-küresel-bulut-bilişim-devleri-aws-microsoft-azure-ve-google-cloud-201f441e2862" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Code Spaces — AWS Hesabının Ele Geçirilmesi ile Şirketin Yok Oluşu (2014)</h3>
-                        <p>2014 yılında yaşanan Code Spaces veri ihlali olayının detaylı analizi. AWS hesabının ele geçirilmesi sonucu şirketin tamamen yok oluşu...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Nisan 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/code-spaces-aws-hesabının-ele-geçirilmesi-ile-şirketin-yok-oluşu-2014-56966d0d8c0b" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Capital One Veri İhlali (2019)</h3>
-                        <p>2019 yılında Capital One'da yaşanan büyük veri ihlali olayının analizi. 100 milyondan fazla müşterinin kişisel verilerinin çalınması...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Nisan 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/capital-one-veri-i̇hlali-2019-bd508e111886" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Cihazlar Arası İletişim Modları ve Türleri</h3>
-                        <p>İletişim modları ve cihazlar arası veri transferi yöntemleri hakkında detaylı teknik analiz. Farklı iletişim protokolleri ve kullanım alanları...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Aralık 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/cihazlar-arası-i̇letişim-modları-ve-türleri-c6746247f27f" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Ağ Topolojileri</h3>
-                        <p>Ağ topolojisi, bir ağdaki cihazların (bilgisayarlar, yazıcılar, sunucular vb.) birbirine bağlanma şeklini ve iletişim kurma yolunu gösterir...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Aralık 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/ağ-topolojiler-1191a106d0a9" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="blog-content">
-                        <h3>TEMEL NETWORK</h3>
-                        <p>Ağ nedir? Temel ağ kavramları, network cihazları ve ağ yapılandırması hakkında kapsamlı rehber. Ağ güvenliği ve temel protokoller...</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">Aralık 2024</span>
-                            <a href="https://medium.com/@abidinsamet0cay/temel-network-19ca45b97d56" class="blog-read-more">Medium'da Oku</a>
-                        </div>
-                    </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -802,7 +802,14 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>E-posta</h4>
-                            <p><a href="mailto:abidinsamet0cay@gmail.com">abidinsamet0cay@gmail.com</a></p>
+                            <p><a href="mailto:abidinsametcay@sebsglobal.com">abidinsametcay@sebsglobal.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>SEBS Global</h4>
+                            <p><a href="https://sebsglobal.com" target="_blank">sebsglobal.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
